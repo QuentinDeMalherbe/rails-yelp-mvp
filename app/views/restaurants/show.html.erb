@@ -1,0 +1,18 @@
+<div class="container">
+  <h1><%= @restaurant.name %></h1>
+  <div class="card" style="width: 18rem;">
+    <ul class="list-group list-group-flush">
+      <% @restaurant.reviews.each do |review| %>
+        <li class="list-group-item">
+          <div class='commentaire'>
+            <p><%= review.content %></p>
+            <p><%= review.rating %></p>
+          </div>
+        </li>
+      <% end%>
+    </ul>
+  </div>
+
+   <%= link_to 'Donnez son avis' , new_restaurant_review_path(@restaurant), class:'card-link' %>
+  <%= link_to '↩ Retour aux restaurants', restaurants_path, class:'card-link' %>
+</div>
